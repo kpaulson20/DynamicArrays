@@ -1,4 +1,6 @@
-﻿public class Contact
+﻿using System.Reflection;
+
+public class Contact
 {
     #region
     public string fName { get; set; }
@@ -9,7 +11,6 @@
     public double ZIPCode { get; set; }
     public string Phone { get; set; }
     public string Email { get; set; }
-
     #endregion
 }
 
@@ -18,7 +19,7 @@ public class Program
     static void Main()
     {
         // Access the file
-        string filePath = @"C:\Users\mater\OneDrive\Desktop\DSU\Advanced Data Structures\DynamicArrays\us-contacts.csv";
+        string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"us-contacts.csv");
 
         // Create a list/array from the file
         List<Contact> contacts = new List<Contact>();
